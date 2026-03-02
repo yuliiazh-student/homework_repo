@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic_elements</title>
+</head>
+
+<body>
+    <header id="contents">
+        <nav>
+            <ul>
+                <li><a href="#browser_support">Підтримка браузерів</a></li>
+                <li><a href="#new_semantic_elements">Нові семантичні елементи в HTML5</a></li>
+                <li><a href="#section_element">HTML5 &lt;section&gt; елемент</a></li>
+                <li><a href="#article_element">HTML5 &lt;article&gt; елемент</a></li>
+                <li><a href="#header_element">HTML5 &lt;header&gt; елемент</a></li>
+                <li><a href="#footer_element">HTML5 &lt;footer&gt; елемент</a></li>
+                <li><a href="#video">Відео</a></li>
+                <li><a href="#resume">Резюме</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>HTML5 Семантичні елементи</h1>
+            <p>Семантичний елемент чітко описує його значення як для браузера, так і
+                для розробника.</p>
+            <p>Приклади <b>не семантичних</b> елементів:
+                &lt;div&gt; і &lt;span&gt;- нічого не говорить
+                про його вміст.</p>
+            <p>Приклади <b>семантичних</b> елементів:
+                &lt;form&gt;, &lt;table&gt; і &lt;article&gt;- чітко
+                визначає його зміст.</p>
+            <section id="browser_support">
+                <h2>Підтримка браузерів</h2>
+                <img src="/images/logos.png" alt="Logos">
+                <p>Семантичні елементи HTML5 підтримуються у всіх сучасних браузерах.</p>
+                <p>Крім того, ви можете "навчити" старих браузерів, як обробляти "невідомі
+                    елементи".</p>
+                <p>Прочитайте про це в <a href="https://www.blogger.com/onboarding" rel="noreferrer,nofollow">підтримці
+                        браузера
+                        HTML5.</a></p>
+                <div><a href="#contents">До гори</a></div>
+            </section>
+            <hr>
+            <section id="new_semantic_elements">
+                <h2>Нові семантичні елементи в HTML5</h2>
+                <p>HTML5 пропонує нові семантичні елементи для визначення різних частин
+                    веб-сторінки:</p>
+                <ul>
+                    <li>&lt;section&gt;</li>
+                    <li>&lt;article&gt;</li>
+                    <li>&lt;header&gt;</li>
+                    <li>&lt;footer&gt;</li>
+                </ul>
+                <div><a href="#contents">До гори</a></div>
+            </section>
+            <hr>
+            <section id="section_element">
+                <h2>HTML5 &lt;section&gt; елемент</h2>
+                <p>Елемент &lt;section&gt; визначає розділ в документі.</p>
+                <p>Згідно з документацією в3к′с HTML5: "розділ представляє собою тематичну
+                    угруповання контенту, зазвичай з заголовком".</p>
+                <p>Домашня сторінка зазвичай може бути розділена на розділи для
+                    ознайомлення, змісту і контактної інформації.</p>
+                <img src="/images/section_ex.png" alt="Section">
+                <div><a href="#contents">До гори</a></div>
+            </section>
+            <hr>
+            <section id="article_element">
+                <h2>HTML5 &lt;article&gt; елемент</h2>
+                <p>Елемент &lt;article&gt; визначає незалежний, автономний вміст.</p>
+                <p>Стаття повинна мати сенс самостійно, і вона повинна мати можливість
+                    читати його незалежно від іншої частини веб-сайту.</p>
+                <p>Приклади того, де можна використовувати елемент &lt;article&gt;:</p>
+                <ul>
+                    <li>Повідомлення на форумі</li>
+                    <li>блозі</li>
+                    <li>Газетна стаття</li>
+                </ul>
+                <img src="/images/article_ex.png" alt="Article">
+                <div><a href="#contents">До гори</a></div>
+            </section>
+            <hr>
+            <section id="header_element">
+                <h2>HTML5 &lt;header&gt; елемент</h2>
+                <p>Елемент &lt;header&gt; задає заголовок для документа або розділу.</p>
+                <p>Елемент &lt;header&gt; повинен використовуватися в якості контейнера для
+                    вступного змісту.</p>
+                <p>В одному документі може бути кілька елементів
+                    &lt;header&gt;.</p>
+                <p>У наступному прикладі визначається заголовок для статті:</p>
+                <img src="/images/header_ex.png" alt="Header">
+                <div><a href="#contents">До гори</a></div>
+            </section>
+            <hr>
+            <section id="footer_element">
+                <h2>HTML5 &lt;footer&gt; елемент</h2>
+                <p>Елемент &lt;footer&gt; вказує нижній колонтитул для документа або розділу.</p>
+                <p>Нижній колонтитул зазвичай містить автора документа, інформацію про
+                    авторське право, посилання на умови використання, контактні дані і т.д.</p>
+                <p>В одному документі може бути кілька елементів &lt;footer&gt;.</p>
+                <img src="/images/footer_ex.png" alt="Footer">
+                <div><a href="#contents">До гори</a></div>
+            </section>
+        </article>
+        <hr>
+        <section id="video">
+            <h2>Відео</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dEBVe8Ij7JU?si=On6BP4LVTBq0Wpnm"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div><a href="#contents">До гори</a></div>
+        </section>
+        <hr>
+        <section id="resume">
+            <h2>Резюме</h2>
+            <iframe src="./01-CV/uk/index.html" width="600" height="400" frameborder="1"></iframe>
+            <div><a href="#contents">До гори</a></div>
+        </section>
+    </main>
+</body>
+
+</html>
