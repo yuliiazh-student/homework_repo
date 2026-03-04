@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <form action="#" method="post" id="my_form"
+        onsubmit="alert(decodeURI(new URLSearchParams(Array.from(new FormData(document.getElementById('my_form')))).toString()));return false;">
+        <label for="usersfullname">Full name</label>
+        <input type="text" name="usersfullname" id="usersfullname" placeholder="John Doe" minlength="2" required>
+        <br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password" minlength="8" required>
+        <br>
+        <label for="confirmpassword">Confirm password</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm your password" required>
+        <br>
+        <span>Gender</span>
+        <label><input type="radio" name="gender" value="male" checked>Male</label>
+        <label><input type="radio" name="gender" value="female">Female</label>
+        <br>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" placeholder="Age">
+        <br>
+        <label for="course">Course</label>
+        <select name="course" id="course" required>
+            <option value="" disabled selected hidden>=Select course=</option>
+            <option value="Front">Front-End</option>
+            <option value="Back">Back-End</option>
+            <option value="PM">Project Management</option>
+            <option value="QA">QA Manual</option>
+        </select>
+        <br>
+        <label for="adress">Full adress</label>
+        <textarea name="adress" id="adress" placeholder="Country, state, city, street address, apt" rows="5" cols="30"
+            required></textarea>
+        <br>
+        <label><input type="checkbox" name="agreement" value="agreement">I agree to the processing of my personal
+            data</label>
+        <br>
+        <button type="reset">Clear form</button>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+
+</html>
