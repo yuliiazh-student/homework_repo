@@ -120,7 +120,7 @@ ul>li:nth-last-child(even) {
 
 .shoppinglist li:hover {
     background-color: #7A7593;
-    transition: all 0.2s ease;
+    transition: all .1s ease-in;
     border-top-color: #ffffff;
     border-bottom-color: #ffffff;
 }
