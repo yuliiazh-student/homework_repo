@@ -5,90 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denis Novik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>About me</li>
-                <li>Skills</li>
-                <li>Portfolio</li>
-                <li>Contacts</li>
-            </ul>
-        </nav>
+        <div class="container header">
+            <nav>
+                <ul class="item-list">
+                    <li>Home</li>
+                    <li>About me</li>
+                    <li>Skills</li>
+                    <li>Portfolio</li>
+                    <li>Contacts</li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section>
-            <h1>Denis Novik</h1>
-            <div><img src="./images/DenisNovik.webp" alt="Denis Novik"></div>
-        </section>
-        <section>
-            <div>
-                <h2>About me</h2>
-                <p>Hi, I'm Denis – UX/UI designer from Minsk.
-                    I'm interested in design and everything connected with it.</p>
-                <p>I'm studying at courses "Web and mobile design
-                    interfaces" in IT-Academy.</p>
-                <p>Ready to implement excellent projects with wonderful people.</p>
+        <section class="intro">
+            <div class="container">
+                <h1>Denis Novik</h1>
+                <div class="img-wrap"><img src="./images/DenisNovik.webp" alt="Denis Novik"></div>
             </div>
         </section>
-        <section>
-            <hgroup>
-                <h2>Skills</h2>
-                <p>I work in such programs as</p>
-            </hgroup>
-            <ul>
-                <li>
-                    <img src="./images/Ps.svg" alt="Ps icon">
-                    <p>Adobe Photoshop</p>
-                    <img src="./images/rating2stars.svg" alt="Rating two stars">
-                </li>
-                <li>
-                    <img src="./images/Ai.svg" alt="Ai icon">
-                    <p>Adobe Illustrator</p>
-                    <img src="./images/rating3stars.svg" alt="Rating three stars">
-                </li>
-                <li>
-                    <img src="./images/Ae.svg" alt="Ae icon">
-                    <p>Adobe After Effects</p>
-                    <img src="./images/rating4stars.svg" alt="Rating four stars">
-                </li>
-                <li>
-                    <img src="./images/Figma.svg" alt="Figma icon">
-                    <p>Figma</p>
-                    <img src="./images/rating5stars.svg" alt="Rating five stars">
-                </li>
-            </ul>
+        <section class="bg-color">
+            <div class="container bio">
+                <h2>About me</h2>
+                <div class="text">
+                    <p>Hi, I'm Denis – UX/UI designer from Minsk.<br>
+                        I'm interested in design and everything connected with it.</p>
+                    <p>I'm studying at courses "Web and mobile design
+                        interfaces" in IT-Academy.</p>
+                    <p>Ready to implement excellent projects<br>with wonderful people.</p>
+                </div>
+            </div>
         </section>
-        <section>
-            <div>
+        <section class="skills">
+            <div class="container">
+                <hgroup class="bio info">
+                    <h2>Skills</h2>
+                    <p>I work in such programs as</p>
+                </hgroup>
+                <ul class="programs">
+                    <li>
+                        <img class="img" src="./images/Ps.svg" alt="Ps icon">
+                        <p>Adobe<br>Photoshop</p>
+                        <img src="./images/rating2stars.svg" alt="Rating two stars">
+                    </li>
+                    <li>
+                        <img class="img" src="./images/Ai.svg" alt="Ai icon">
+                        <p>Adobe<br>Illustrator</p>
+                        <img src="./images/rating3stars.svg" alt="Rating three stars">
+                    </li>
+                    <li>
+                        <img class="img" src="./images/Ae.svg" alt="Ae icon">
+                        <p>Adobe<br>After Effects</p>
+                        <img src="./images/rating4stars.svg" alt="Rating four stars">
+                    </li>
+                    <li>
+                        <img class="img f" src="./images/Figma.svg" alt="Figma icon">
+                        <p>Figma</p>
+                        <br>
+                        <img src="./images/rating5stars.svg" alt="Rating five stars">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="bg-color">
+            <div class="bio container portfolio">
                 <h2>Portfolio</h2>
-                <div><img src="./images/Fashion-Store.webp" alt="Fashion-Store"></div>
-                <a href="#">Online fashion store - Homepage</a>
-                <div><img src="./images/reebok_web.webp" alt="Reebok Store"></div>
-                <a href="#">Reebok Store - Concept</a>
-                <div><img src="./images/braun-landing.webp" alt="Braun Landing Page"></div>
-                <a href="#">Braun Landing Page - Concept</a>
+                <div class="img-wrap"><img src="./images/Fashion-Store.webp" alt="Fashion-Store"></div>
+                <div class="link-wrap"><a href="#">Online fashion store - <br> Homepage</a></div>
+                <div class="img-wrap"><img src="./images/reebok_web.webp" alt="Reebok Store"></div>
+                <div class="link-wrap"><a href="#">Reebok Store - Concept</a></div>
+                <div class="img-wrap"><img src="./images/braun-landing.webp" alt="Braun Landing Page"></div>
+                <div class="link-wrap"><a href="#">Braun Landing Page - Concept</a></div>
             </div>
         </section>
     </main>
     <footer>
-        <hgroup>
-            <h2>Contacts</h2>
-            <p>Want to know more or just chat?
-                You are welcome!</p>
-        </hgroup>
-        <div><button>Send message</button></div>
-        <ul>
-            <li><a href="#"><img src="./images/linkedin.svg" alt="LinkedIn"></a></li>
-            <li><a href="#"><img src="./images/instagram.svg" alt="Instagram"></a></li>
-            <li><a href="#"><img src="./images/behance.svg" alt="Behance"></a></li>
-            <li><a href="#"><img src="./images/dribbble.svg" alt="Dribble"></a></li>
-        </ul>
-        <p>Like me on
-            LinkedIn, Instagram, Behance, Dribble</p>
+        <div class="container bio">
+            <hgroup>
+                <h2>Contacts</h2>
+                <p>Want to know more or just chat?
+                    <br>
+                    You are welcome!
+                </p>
+            </hgroup>
+            <div class="btn-wrap"><button>Send message</button></div>
+            <ul class="s-media">
+                <li><a href="#"><img src="./images/linkedin.svg" alt="LinkedIn"></a></li>
+                <li><a href="#"><img src="./images/instagram.svg" alt="Instagram"></a></li>
+                <li><a href="#"><img src="./images/behance.svg" alt="Behance"></a></li>
+                <li><a href="#"><img src="./images/dribbble.svg" alt="Dribble"></a></li>
+            </ul>
+            <p>Like me on<br>LinkedIn, Instagram, Behance,<br>Dribble</p>
+        </div>
     </footer>
 </body>
 
