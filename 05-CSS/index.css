@@ -50,10 +50,21 @@ header::after {
     font-size: 1.125rem;
     letter-spacing: 0.02em;
     line-height: 1.875rem;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .item-list li:not(:last-child) {
     margin-right: 40px;
+}
+
+.item-list li:hover {
+    color: #070707;
+    font-weight: 700;
+    transition: all .1s ease-in;
 }
 
 .intro {
@@ -197,6 +208,11 @@ footer hgroup p {
     margin-bottom: 30px;
 }
 
+button:hover {
+    background-color: #F0F8FF;
+    color: #070707;
+}
+
 .s-media {
     list-style: none;
     text-align: center;
@@ -212,6 +228,10 @@ footer hgroup p {
         height: 40px;
         width: 40px;
     }
+}
+
+.s-media li:hover {
+    opacity: 0.5;
 }
 
 .s-media li:not(:last-child) {
