@@ -52,15 +52,10 @@ section:first-of-type {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 30px;
+}
 
-
-    & .large-photo-right {
-        grid-column: 2/4;
-    }
-
-    & .large-photo-left {
-        grid-column: 1/3;
-    }
+.large-horizontal {
+    grid-column: span 2;
 }
 
 .nature-grid {
@@ -68,22 +63,14 @@ section:first-of-type {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 30px;
+}
 
-    & .large-photo-right {
-        grid-column: 2/4;
-    }
+.huge-photo {
+    grid-area: 2/1/4/3;
+}
 
-    & .large-photo-left {
-        grid-column: 1/3;
-    }
-
-    & .huge-photo {
-        grid-area: 2/1/4/3;
-    }
-
-    & .large-photo-vertical {
-        grid-row: 2/4;
-    }
+.large-vertical {
+    grid-row: span 2;
 }
 
 .people-grid {
@@ -91,16 +78,4 @@ section:first-of-type {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 30px;
-
-    & .large-photo-vertical {
-        grid-row: span 2;
-    }
-
-    & .large-photo-right {
-        grid-column: 2/4;
-    }
-
-    & .large-photo-left {
-        grid-column: 1/3;
-    }
 }
