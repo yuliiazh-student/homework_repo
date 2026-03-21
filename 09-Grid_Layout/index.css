@@ -47,7 +47,7 @@ section:first-of-type {
     padding-top: 120px;
 }
 
-.cities-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -58,11 +58,8 @@ section:first-of-type {
     grid-column: span 2;
 }
 
-.nature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.nature {
     grid-template-rows: repeat(4, 1fr);
-    grid-gap: 30px;
 }
 
 .huge-photo {
@@ -73,9 +70,6 @@ section:first-of-type {
     grid-row: span 2;
 }
 
-.people-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.people {
     grid-template-rows: repeat(5, 1fr);
-    grid-gap: 30px;
 }
