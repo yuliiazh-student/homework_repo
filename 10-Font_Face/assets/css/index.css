@@ -29,6 +29,13 @@ header {
     justify-content: space-between;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+    padding-bottom: 4px;
+}
+
 .box {
     display: flex;
     list-style: none;
@@ -44,11 +51,11 @@ li {
 }
 
 main {
-    padding-bottom: 90px;
+    padding-bottom: 30px;
 }
 
 section {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 p {
@@ -79,15 +86,14 @@ h2 {
 }
 
 #lang {
-    /*змінено*/
-    padding-left: 3px;
     font-family: 'Tourney';
     font-weight: 600;
     font-size: 1.375rem;
-    line-height: 1.125rem;
+    line-height: 0.7rem;
     /*змінено*/
     letter-spacing: 0.04em;
-    margin-right: 40px;
+    padding-left: 3px;
+    padding-bottom: 5px;
 }
 
 .chapters {
@@ -108,4 +114,8 @@ mark {
 
 a {
     color: #000;
+}
+
+.text p {
+    margin-bottom: 28px;
 }
