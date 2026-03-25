@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF;
+    font-family: 'PT Sans', sans-serif;
+    color: #000;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+.cont {
+    width: min(90%, 785px);
+    margin: 0 auto;
+}
+
+header {
+    height: 80px;
+    padding-block: 13px;
+    margin-bottom: 70px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+    padding-bottom: 4px;
+}
+
+ul {
+    list-style: none;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+li {
+    font-family: 'Staatliches';
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.03em;
+}
+
+main {
+    padding-bottom: 30px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+p {
+    font-size: 1.75rem;
+    line-height: 3rem;
+}
+
+h2,
+.aside-list li {
+    font-family: 'Francois One', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+}
+
+.react p {
+    margin-bottom: 40px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+#lang {
+    font-family: 'Tourney';
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 0.7rem;
+    /*змінено*/
+    letter-spacing: 0.04em;
+    padding-left: 3px;
+    padding-bottom: 5px;
+}
+
+.chapters {
+    font-family: 'Farro';
+    text-transform: none;
+    vertical-align: top;
+    font-weight: 300;
+    /*змінено*/
+    font-size: 1.11rem;
+    /*змінено*/
+    line-height: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+mark {
+    background-color: #DADADA;
+}
+
+a {
+    color: #000;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.text p {
+    margin-bottom: 28px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.aside-list {
+    li {
+        a {
+            text-decoration: none;
+        }
+
+        margin-bottom: 70px;
+    }
+}
