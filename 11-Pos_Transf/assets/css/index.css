@@ -7,7 +7,8 @@
 }
 
 body {
-    background-color: #FFF;
+    background: #FFF url('./../images/bg-picture.svg') right 100px top 150px/760px auto no-repeat;
+    background-attachment: fixed;
     font-family: 'PT Sans', sans-serif;
     color: #000;
 }
@@ -64,7 +65,7 @@ main {
 }
 
 section {
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }
 
 p {
@@ -80,7 +81,19 @@ h2,
     line-height: 3rem;
     font-weight: 400;
     letter-spacing: 0.04em;
+}
+
+h2 {
     margin-bottom: 40px;
+}
+
+h2::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+    margin-bottom: 20px;
 }
 
 .react p {
@@ -161,11 +174,13 @@ header a {
 
 .nav-list {
     li {
+        /*border-bottom: 1px solid #E6E6E6;*/
+        margin-bottom: 70px;
+        padding: 10px 8px 0px 8px;
+        /*white-space: nowrap;*/
+
         a {
             text-decoration: none;
         }
-
-        border-bottom: 1px solid #E6E6E6;
-        margin-bottom: 70px;
     }
 }
