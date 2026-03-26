@@ -17,15 +17,16 @@ body {
     margin: 0 auto;
 }
 
-.cont {
-    width: min(90%, 785px);
-    margin: 0 auto;
-}
-
 header {
     height: 80px;
+    background-color: #FFF;
     padding-block: 13px;
     margin-bottom: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .header {
@@ -72,7 +73,7 @@ p {
 }
 
 h2,
-.aside-list li {
+.nav-list li {
     font-family: 'Francois One', sans-serif;
     text-transform: uppercase;
     font-size: 2.25rem;
@@ -140,12 +141,31 @@ header a {
     margin: 0 auto;
 }
 
-.aside-list {
+.contain {
+    padding-top: 150px;
+}
+
+.sidebar {
+    width: min(90%, 385px);
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+    align-self: flex-start;
+}
+
+.cont {
+    width: min(90%, 785px);
+    margin: 0 auto;
+}
+
+.nav-list {
     li {
         a {
             text-decoration: none;
         }
 
+        border-bottom: 1px solid #E6E6E6;
         margin-bottom: 70px;
     }
 }
