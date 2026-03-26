@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFF url('./../images/bg-picture.svg') right 100px top 150px/760px auto no-repeat;
+    background-attachment: fixed;
+    font-family: 'PT Sans', sans-serif;
+    color: #000;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+header {
+    height: 80px;
+    background-color: #FFF;
+    padding-block: 13px;
+    margin-bottom: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 52px;
+    padding-bottom: 4px;
+}
+
+ul {
+    list-style: none;
+}
