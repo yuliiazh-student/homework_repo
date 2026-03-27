@@ -7,8 +7,6 @@
 }
 
 body {
-    background: #FFF url('./../images/bg-picture.svg') right 100px top 150px/760px auto no-repeat;
-    background-attachment: fixed;
     font-family: 'PT Sans', sans-serif;
     color: #000;
 }
@@ -36,6 +34,11 @@ header {
     justify-content: space-between;
 }
 
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header-left {
     display: flex;
     align-items: center;
@@ -46,3 +49,77 @@ header {
 ul {
     list-style: none;
 }
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+li {
+    font-family: 'Staatliches';
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    letter-spacing: 0.03em;
+}
+
+#lang {
+    font-family: 'Tourney';
+    font-weight: 600;
+    font-size: 1.375rem;
+    line-height: 0.7rem;
+    letter-spacing: 0.04em;
+    padding-left: 3px;
+    padding-bottom: 5px;
+}
+
+.sec-wrapper {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 3rem;
+    letter-spacing: 0.04em;
+    padding-top: 150px;
+    margin-bottom: 40px;
+}
+
+h1::before {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    background-color: #000;
+    margin-bottom: 8px;
+    margin-right: 20px;
+}
+
+.grid {
+    border-top: 1px solid #BFBFBF;
+    border-bottom: 1px solid #BFBFBF;
+    padding: 20px 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.logos {
+    width: 270px;
+    height: 180px;
+    background-color: #E6E6E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*.revert {
+    background-color: #1A1A1A;
+
+    img {
+        filter: invert();
+    }
+}*/
