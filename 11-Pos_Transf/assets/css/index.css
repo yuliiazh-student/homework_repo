@@ -174,12 +174,22 @@ header a {
 
 .nav-list {
     li {
-        border-bottom: 1px solid #E6E6E6;
-        margin-bottom: 70px;
-        padding: 10px 8px 0px 8px;
+        position: relative;
+        margin-bottom: 61px;
+        padding: 10px 8px 9px 8px;
 
         a {
             text-decoration: none;
         }
     }
+}
+
+.nav-list li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    width: 365px;
+    height: 1px;
+    background-color: #E6E6E6;
 }

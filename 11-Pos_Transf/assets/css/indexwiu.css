@@ -108,9 +108,6 @@ h1::before {
 }
 
 .logos {
-    width: 270px;
-    height: 180px;
-    background-color: #E6E6E6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,17 +143,15 @@ h1::before {
     backface-visibility: hidden;
 }
 
-/*.flip-front {
-    background-color: #bbb;
-    color: black;
-}*/
+.flip-front {
+    background-color: #E6E6E6;
+}
 
 .flip-back {
     background-color: #1A1A1A;
+    transform: rotateX(180deg);
 
     img {
         filter: invert();
     }
-
-    transform: rotateX(180deg);
 }
