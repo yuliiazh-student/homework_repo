@@ -113,6 +113,11 @@ h1::before {
     align-items: center;
 }
 
+#insta {
+    padding-top: 67px;
+    padding-bottom: 56px;
+}
+
 .flip-card {
     background-color: transparent;
     width: 270px;
