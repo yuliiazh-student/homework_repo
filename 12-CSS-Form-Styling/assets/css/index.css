@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7F7F7;
+    font-family: Roboto;
+    color: #545454;
+}
+
+.forms-wrapper {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.acc-form-wrapper,
+.prof-form-wrapper {
+    width: min(90%, 570px);
+    min-height: 607px;
+    background-color: #FFF;
+    padding: 35px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: #1C1C1C;
+    margin-bottom: 20px;
+}
+
+.two-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 0.6818rem;
+        line-height: 1.375rem;
+    }
+
+    p {
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+        margin-top: 7px;
+        color: #969696;
+    }
+}
+
+input[type=text],
+input[type=email],
+select {
+    width: 100%;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #E4E4E4;
+    padding: 0 10px;
+
+    &:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+}
+
+.radio-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+input[type=radio] {
+    appearance: none;
+}
+
+label:has(input[type=radio]) {
+    position: relative;
+    padding-left: 27px;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #E4E4E4;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        transition: all 0.2s ease;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #FFF;
+        position: absolute;
+        left: 6px;
+        top: 9px;
+    }
+}
+
+label:has(input[type=radio]:checked) {
+    &::before {
+        background-color: #007BFF;
+        border-color: #007BFF;
+    }
+}
