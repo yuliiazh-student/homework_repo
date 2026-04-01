@@ -9,6 +9,7 @@
 body {
     background-color: #FFF;
     font-family: Roboto;
+    font-size: 1rem;
     color: #16133D;
 }
 
@@ -68,6 +69,87 @@ ul {
 ul li {
     padding: 40px;
     border: 1px solid #E5EAF4;
+    border-radius: 8px;
+}
+
+.icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border: 1px solid rgba(21, 101, 216, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    line-height: 1.33125rem;
+    font-weight: 400;
+    letter-spacing: 0.0125rem;
+}
+
+li p {
+    margin-bottom: 30px;
+    line-height: 1.75rem;
+}
+
+li a {
+    text-decoration: none;
+    color: #3DB370;
+    font-weight: 600;
+}
+
+.icon-instagram svg {
+    height: 20.01px;
+    width: 20.01px;
+}
+
+.icon-facebook svg {
+    height: 18.67px;
+    width: 10px;
+}
+
+.icon-github svg {
+    height: 19.5px;
+    width: 20px;
+}
+
+.icon-dribble svg {
+    height: 19.38px;
+    width: 19.38px;
+}
+
+.icon-twitter svg {
+    height: 16.24px;
+    width: 20px;
+}
+
+.wrap {
+    height: 38px;
+    width: 38px;
+    border-radius: 5px;
+    background-color: #F4FEFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.logo svg {
+    height: 35px;
+    width: 200px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    padding-top: 40px;
 }
 
 footer {
