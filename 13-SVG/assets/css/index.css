@@ -160,10 +160,20 @@ li a {
     padding-top: 40px;
 }
 
-.wrap:hover svg {
-    fill: #3DB370;
-    color: #3DB370;
-    transition: fill 0.3s;
+use {
+    transition: fill 0.2s ease;
+}
+
+.wrap {
+    use {
+        fill: #0D0D0D;
+    }
+
+    &:hover {
+        use {
+            fill: #3DB370;
+        }
+    }
 }
 
 footer {
