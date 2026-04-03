@@ -81,6 +81,24 @@ ul li {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    position: relative;
+}
+
+.main-icon {
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+
+.green {
+    opacity: 0;
+}
+
+.icon-wrapper:hover .green {
+    opacity: 1;
+}
+
+.icon-wrapper:hover .blue {
+    opacity: 0;
 }
 
 h2 {
