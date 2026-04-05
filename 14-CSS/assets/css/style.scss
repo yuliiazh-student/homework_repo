@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    width: min(90%, 1030px);
+    width: min(90%, 1170px);
     margin: 0 auto;
 }
 
@@ -73,7 +73,9 @@ img {
 }
 
 .photo::before,
-.photo::after {
+.photo::after,
+.extra-corners::before,
+.extra-corners::after {
     content: "";
     position: absolute;
     width: 100px;
@@ -92,6 +94,20 @@ img {
     bottom: -15px;
     right: -15px;
     border-left: none;
+    border-top: none;
+}
+
+.extra-corners::before {
+    top: -15px;
+    right: -15px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.extra-corners::after {
+    bottom: -15px;
+    left: -15px;
+    border-right: none;
     border-top: none;
 }
 
