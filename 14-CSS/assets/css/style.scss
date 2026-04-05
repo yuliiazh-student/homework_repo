@@ -43,6 +43,7 @@ hgroup {
     }
 
     h1 {
+        font-family: Roboto;
         @include text(900, #FFCC00);
         @include fz(60);
         @include lh(66);
@@ -124,6 +125,7 @@ img {
 }
 
 h2 {
+    font-family: Roboto;
     @include text(900, #666666);
     @include fz(36);
     @include lh(34);
