@@ -243,3 +243,13 @@ footer>div>p {
     line-height: 1.25rem;
     color: #828282;
 }
+
+@media screen and (max-width:572px) {
+    .container {
+        width: calc(100%-29px);
+    }
+
+    .img-wrap {
+        width: 100%;
+    }
+}

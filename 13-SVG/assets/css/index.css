@@ -19,7 +19,8 @@ header {
     border-bottom: 1px solid #EFEEF3;
 }
 
-.logo-header svg {
+.logo-header img,
+.logo-footer img {
     height: 35px;
     width: 200px;
     display: block;
@@ -166,21 +167,14 @@ li a {
     }
 }
 
-
 .icons {
     display: flex;
     gap: 10px;
 }
 
-.logo svg {
-    height: 35px;
-    width: 200px;
-    margin-bottom: 40px;
-    display: block;
-}
-
-.logo {
+.logo-footer {
     padding-top: 40px;
+    margin-bottom: 40px;
 }
 
 use {
