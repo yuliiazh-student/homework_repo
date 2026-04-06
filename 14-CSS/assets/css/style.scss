@@ -1,21 +1,10 @@
-*,
-*::before,
-*::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #FFF;
-    font-family: Raleway, sans-serif;
-    color: #333333;
-}
-
-.container {
-    width: min(90%, 1170px);
-    margin: 0 auto;
-}
+$gold:#FFCC00;
+$gray:#898F8F;
+$darkgray:#333;
+$medium-gray:#666;
+$white:#FFF;
+$light-gray:#CCC;
+$black:#000;
 
 @mixin fz($px) {
     font-size: ($px/16)*1rem;
@@ -30,13 +19,37 @@ body {
     color: $color;
 }
 
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $white;
+    font-family: Raleway, sans-serif;
+    color: $darkgray;
+    transition: color 0.3s ease;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
 hgroup {
     padding-top: 121px;
     text-transform: uppercase;
     text-align: center;
 
     p {
-        @include text(500, #898F8F);
+        @include text(500, $gray);
         @include fz(18);
         @include lh(24);
         margin-bottom: 15px;
@@ -44,7 +57,7 @@ hgroup {
 
     h1 {
         font-family: Roboto;
-        @include text(900, #FFCC00);
+        @include text(900, $gold);
         @include fz(60);
         @include lh(66);
     }
@@ -63,7 +76,7 @@ hgroup {
 .gold-icon::after {
     content: "";
     height: 1px;
-    background-color: #FFCC00;
+    background-color: $gold;
     flex-grow: 1;
     max-width: 210px;
 }
@@ -78,14 +91,12 @@ img {
     height: 100%;
     object-fit: cover;
     vertical-align: top;
-    outline: 1px solid #FFCC00;
-    outline-offset: 0px;
+    border: 1px solid $gold;
 }
 
 .photo-wrapper {
     width: 50%;
     padding: 80px 100px 80px 85px;
-    border-right: 1px solid #FFCC00;
 }
 
 .photo {
@@ -100,7 +111,7 @@ img {
     position: absolute;
     width: 100px;
     height: 100px;
-    border: 1px solid #FFCC00;
+    border: 1px solid $gold;
 }
 
 .photo::before {
@@ -135,9 +146,10 @@ img {
     width: 50%;
     padding: 75px 70px 70px 85px;
     text-align: center;
+    border-left: 1px solid $gold;
 
     p {
-        @include text(500, #333333);
+        @include text(500, $darkgray);
         @include fz(14);
         @include lh(24);
 
@@ -148,18 +160,18 @@ img {
             width: 50px;
             margin: 16px auto 27px;
             background: linear-gradient(to right,
-                    #FFCC00 0%, #FFCC00 20%,
+                    $gold 0%, $gold 20%,
                     transparent 20%, transparent 30%,
-                    #FFCC00 30%, #FFCC00 70%,
+                    $gold 30%, $gold 70%,
                     transparent 70%, transparent 80%,
-                    #FFCC00 80%, #FFCC00 100%);
+                    $gold 80%, $gold 100%);
         }
     }
 }
 
 h2 {
     font-family: Roboto;
-    @include text(900, #666666);
+    @include text(900, $medium-gray);
     @include fz(36);
     @include lh(34);
 
@@ -168,28 +180,16 @@ h2 {
         display: block;
         width: 100px;
         height: 1px;
-        background: #FFCC00;
+        background: $gold;
         margin: 25px auto 30px;
     }
 }
 
 h3 {
-    @include text(400, #666666);
+    @include text(400, $medium-gray);
     @include fz(24);
     @include lh(36);
     margin-bottom: 22px;
-}
-
-
-.icon-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #CCC;
-    border-radius: 50%;
-    @include fz(12);
 }
 
 .icon-wrapper {
@@ -199,12 +199,28 @@ h3 {
     gap: 5px;
 }
 
+.icon-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid $light-gray;
+    border-radius: 50%;
+    @include fz(12);
+}
+
 .link {
     font-family: "Open Sans";
-    @include text(700, #666666);
+    @include text(700, $medium-gray);
     @include fz(14);
     @include lh(14);
     text-transform: uppercase;
-    border: 1px solid #FFCC00;
+    border: 1px solid $gold;
     padding: 2px 10px;
+    margin-bottom: 70px;
+
+    &:hover {
+        color: $black;
+    }
 }
