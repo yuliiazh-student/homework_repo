@@ -31,7 +31,6 @@ body {
     background-color: $white;
     font-family: Raleway, sans-serif;
     color: $darkgray;
-    transition: color 0.3s ease;
 }
 
 .container {
@@ -41,6 +40,8 @@ body {
 
 a {
     text-decoration: none;
+    transition: all .2s ease;
+    color: inherit;
 }
 
 hgroup {
