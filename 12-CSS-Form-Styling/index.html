@@ -16,16 +16,16 @@
                 <h2>Create an Account</h2>
                 <div class="two-inputs">
                     <div class="input-wrapper">
-                        <label for="firstname">First name</label>
+                        <label for="firstname">First Name</label>
                         <input type="text" name="firstname" id="firstname" minlength="2" required>
                     </div>
                     <div class="input-wrapper">
-                        <label for="lastname">Last name</label>
+                        <label for="lastname">Last Name</label>
                         <input type="text" name="lastname" id="lastname" minlength="2" required>
                     </div>
                 </div>
                 <div class="input-wrapper">
-                    <label for="email">Email</label>
+                    <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                     <p>We'll never share your email with anyone else.</p>
                 </div>
@@ -56,49 +56,83 @@
                         <input type="text" name="city" id="city" minlength="1" required>
                     </div>
                 </div>
-                <div><button type="submit">Sign Up</button></div>
-                <p>By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a>
-                    and
-                    <a href="#">Privacy Policy</a>.
-                </p>
-                <div>
-                    <p>Have an account?
-                        <a href="#">Log In</a>
+                <div class="btn"><button type="submit">Sign Up</button></div>
+                <div class="paragraf">
+                    <p>By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of Use</a>
+                        and
+                        <a href="#">Privacy Policy</a>.
                     </p>
                 </div>
             </form>
+            <div class="outofform">
+                <p>Have an account?
+                    <a href="#">Log In</a>
+                </p>
+            </div>
         </div>
         <div class="prof-form-wrapper">
             <form action="#" method="post" id="profile_form">
                 <h2>Profile</h2>
-                <div><label for="name">Name</label>
-                    <input type="text" name="name" id="name" minlength="5" required>
+                <div class="group">
+                    <div class="file-field-wrap">
+                        <input type="file" id="avatar" class="file-field" required>
+                        <div class="fake-file"></div>
+                    </div>
+                    <div>
+                        <button type="button" class="delete-btn">
+                            <img src="./assets/images/wastebasket.svg" alt="wastebasket">
+                        </button>
+                    </div>
                 </div>
-                <div><label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
+                <p>Up to 1 MB (300x300 px)</p>
+                <div class="two-inputs">
+                    <div class="input-wrapper">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" minlength="5" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="email2">E-mail</label>
+                        <input type="email" name="email2" id="email2" required>
+                    </div>
                 </div>
-                <div><label for="country">Country</label>
-                    <select name="country" id="country" required>
-                        <option value="">Select</option>
-                        <option value="UA">Ukraine</option>
-                        <option value="US">USA</option>
-                        <option value="GB">Great Britain</option>
-                        <option value="DE">Germany</option>
-                        <option value="CA">Canada</option>
-                    </select>
+                <div class="two-inputs">
+                    <div class="input-wrapper">
+                        <label for="country2">Country</label>
+                        <select name="country2" id="country2" required>
+                            <option value="">Select</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="US">USA</option>
+                            <option value="GB">Great Britain</option>
+                            <option value="DE">Germany</option>
+                            <option value="CA">Canada</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="city2">City</label>
+                        <input type="text" name="city2" id="city2" minlength="1" required>
+                    </div>
                 </div>
-                <div><label for="city">City</label>
-                    <input type="text" name="city" id="city" minlength="1" required>
+                <div class="two-inputs">
+                    <div class="input-wrapper">
+                        <label for="zipcode">Zip Code</label>
+                        <input type="number" name="zipcode" id="zipcode">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="phonenumb">Phone Number</label>
+                        <input type="tel" name="phonenumb" id="phonenumb" minlength="5" required>
+                    </div>
                 </div>
-                <div><label for="zipcode">Zipcode</label>
-                    <input type="number" name="zipcode" id="zipcode">
-                </div>
-                <div><label for="phonenumb">Phone Number</label>
-                    <input type="tel" name="phonenumb" id="phonenumb" minlength="5" required>
-                </div>
+                <div><button type="submit">Update</button></div>
             </form>
         </div>
     </div>
+    <script>
+        document.addEventListener('change', function (e) {
+            if (e.target.classList.contains('file-field')) {
+                e.target.nextElementSibling.innerText = e.target.files[0].name
+            }
+        })
+    </script>
 </body>
 
 </html>
