@@ -1,3 +1,14 @@
+:root {
+    --brown-dark-color: #2F281E;
+    --orange: #FF9900;
+    --white: #FFF;
+    --brown: #544837;
+    --violet: #7752BE;
+    --orange: #FAB005;
+    --red: #F03E3D;
+    --blue: #4DADF7;
+}
+
 *,
 *::before,
 *::after {
@@ -29,7 +40,9 @@ button {
 
 body {
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    background-color: var(--white);
+    color: var(--brown-dark-color);
 }
 
 .container {
@@ -59,4 +72,134 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+}
+
+a li {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--brown-dark-color);
+}
+
+button {
+    width: 110px;
+    height: 46px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.s-in-btn {
+    background-color: var(--white);
+    color: var(--brown-dark-color);
+    border: 1px solid var(--brown-dark-color);
+    margin-right: 32px;
+}
+
+h1 {
+    font-size: 2.75rem;
+    line-height: 3.375rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: var(--brown);
+}
+
+section {
+    padding-bottom: 90px;
+}
+
+.first-sec {
+    p {
+        padding-right: 10px;
+        margin-bottom: 30px;
+    }
+
+    button {
+        width: 180px;
+        height: 50px;
+    }
+}
+
+h2 {
+    font-size: 2.25rem;
+    line-height: 2.7rem;
+    font-weight: 700;
+}
+
+#second {
+    background-image: url('./images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 120px;
+
+}
+
+.second-sec {
+
+    h2 {
+        text-align: center;
+        width: 539px;
+        margin: 0 auto 50px auto;
+    }
+}
+
+.items-list {
+    display: flex;
+    gap: 40px;
+
+    li div {
+        height: 50px;
+        width: 50px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    li h3 {
+        font-size: 1.375rem;
+        line-height: 1.65rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    li p {
+        font-size: 1rem;
+        line-height: 1.625rem;
+        font-weight: 500;
+        margin-bottom: 60px;
+    }
+}
+
+.second-sec-btn button {
+    width: 180px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+#click {
+    background-color: var(--violet);
+}
+
+#survays {
+    background-color: var(--orange);
+}
+
+#heart {
+    background-color: var(--red);
+}
+
+#hourglass {
+    background-color: var(--blue);
 }
