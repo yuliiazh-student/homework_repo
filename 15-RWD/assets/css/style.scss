@@ -28,20 +28,10 @@ button {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
     @include fz(16);
     color: $text-color;
     background-color: $background-color;
-}
-
-.page-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    main {
-        flex-grow: 1;
-    }
 }
 
 .container {
@@ -51,7 +41,16 @@ body {
 
 header {
     width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
+    height: 100px;
+}
+
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 42px;
 }
