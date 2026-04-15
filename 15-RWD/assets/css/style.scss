@@ -2,6 +2,7 @@ $text-color: #565656;
 $background-color:#FFF;
 $black:#000;
 $gray:#7B7B7B;
+$footer-bg:#F4F4F4;
 
 @mixin fz($px) {
     font-size: ($px/16)*1rem;
@@ -37,6 +38,10 @@ a {
 a,
 button {
     transition: all .2s ease;
+}
+
+img {
+    display: block;
 }
 
 body {
@@ -108,7 +113,7 @@ section {
 }
 
 h1,
-h2 {
+#special {
     font-family: "Red Hat Display", sans-serif;
     @include fz(48);
     @include lh(64);
@@ -177,7 +182,7 @@ time {
     letter-spacing: 0.05rem;
 }
 
-#special {
+h2 {
     font-family: "Red Hat Display", sans-serif;
     @include fz(28);
     line-height: 1.66;
@@ -187,17 +192,92 @@ time {
 }
 
 .cont-group hgroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
     p {
         @include fz(12);
+        margin-bottom: 25px;
     }
 
     h3 {
         width: 85%;
         @include fz(22);
         letter-spacing: 0.1rem;
+        order: 2;
     }
 
     time {
         @include fz(12);
+        margin-bottom: 25px;
     }
+}
+
+.cont-group>p {
+    width: 88%;
+    line-height: 1.66;
+    letter-spacing: 0.05rem;
+}
+
+.flex-wrapper img {
+    margin-bottom: 25px;
+}
+
+.two-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.items hgroup {
+    h3 {
+        width: 97%;
+        @include fz(24);
+    }
+}
+
+.btn button {
+    display: block;
+    margin: 50px auto 90px;
+    text-align: center;
+    width: 180px;
+    height: 46px;
+    border: none;
+    background-color: $text-color;
+    color: $background-color;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 230px;
+}
+
+.info>p {
+    font-family: "Red Hat Display", sans-serif;
+    @include fz(23);
+    line-height: 1.66;
+    @include text(400, $black);
+    letter-spacing: 0.14375rem;
+}
+
+.paragraf {
+    @include fz(19);
+    line-height: 2rem;
+    letter-spacing: 0.059rem;
+    padding-right: 23px;
+
+    p:first-child {
+        margin-bottom: 32px;
+    }
+}
+
+footer {
+    height: 300px;
+    background-color: $footer-bg;
 }
