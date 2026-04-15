@@ -1,8 +1,19 @@
 $text-color: #565656;
 $background-color:#FFF;
+$black:#000;
+$gray:#7B7B7B;
 
 @mixin fz($px) {
     font-size: ($px/16)*1rem;
+}
+
+@mixin lh($px) {
+    line-height: ($px/16)*1rem;
+}
+
+@mixin text($fw, $color) {
+    font-weight: $fw;
+    color: $color;
 }
 
 *,
@@ -19,6 +30,7 @@ ol {
 }
 
 a {
+    color: $black;
     text-decoration: none;
 }
 
@@ -40,11 +52,15 @@ body {
 }
 
 header {
+    background-color: $background-color;
     width: 100%;
-    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .header-wrap {
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,4 +69,135 @@ header {
 .nav-list {
     display: flex;
     gap: 42px;
+
+    li {
+        text-transform: uppercase;
+        @include fz(14);
+        letter-spacing: 0.2625rem;
+    }
+}
+
+.list-search {
+    display: flex;
+    align-items: center;
+    gap: 84px;
+}
+
+.search button {
+    height: 42px;
+    width: 42px;
+    background-color: $background-color;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    padding-top: 100px;
+}
+
+section {
+    margin-bottom: 90px;
+}
+
+.hero {
+    background-image: url('../images/bg-image.webp');
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1,
+h2 {
+    font-family: "Red Hat Display", sans-serif;
+    @include fz(48);
+    @include lh(64);
+    @include text(600, $black);
+    letter-spacing: 0.15rem;
+}
+
+h1 {
+    padding-top: 100px;
+    width: 770px;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.flex-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.content-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+hgroup {
+    margin-bottom: 15px;
+
+    p {
+        @include fz(16);
+        line-height: 1.66;
+        @include text(400, $gray);
+        letter-spacing: 0.1rem;
+        margin-bottom: 30px;
+    }
+
+    h3 {
+        width: 63%;
+        font-family: "Red Hat Display", sans-serif;
+        @include fz(23);
+        line-height: 1.66;
+        @include text(500, $black);
+        letter-spacing: 0.14375rem;
+    }
+}
+
+time {
+    @include fz(16);
+    line-height: 1.66;
+    @include text(400, $gray);
+    letter-spacing: 0.1rem;
+    margin-bottom: 30px;
+}
+
+.content-group>p {
+    width: 78%;
+    line-height: 1.66;
+    letter-spacing: 0.05rem;
+}
+
+#special {
+    font-family: "Red Hat Display", sans-serif;
+    @include fz(28);
+    line-height: 1.66;
+    @include text(600, $black);
+    letter-spacing: 0.1rem;
+    margin-bottom: 50px;
+}
+
+.cont-group hgroup {
+    p {
+        @include fz(12);
+    }
+
+    h3 {
+        width: 85%;
+        @include fz(22);
+        letter-spacing: 0.1rem;
+    }
+
+    time {
+        @include fz(12);
+    }
 }
