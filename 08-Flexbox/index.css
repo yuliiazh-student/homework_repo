@@ -43,6 +43,12 @@ body {
     margin: 0 auto;
 }
 
+.container-2 {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+
 header {
     height: 80px;
     margin-bottom: 90px;
@@ -76,7 +82,7 @@ header {
     gap: 60px;
 }
 
-a li {
+li a {
     font-size: 1.125rem;
     line-height: 1.75rem;
     color: var(--brown-dark-color);
@@ -150,8 +156,8 @@ h2 {
 
 #second {
     background-image: url('./images/background.webp');
-    background-size: cover;
-    background-position: center;
+    background-size: 100% auto;
+    background-position: center top;
     background-repeat: no-repeat;
     padding-bottom: 120px;
 
@@ -168,11 +174,17 @@ h2 {
 
 .items-list {
     display: flex;
+    justify-content: space-between;
     gap: 40px;
+
+    li {
+        width: 25%;
+    }
 
     li div {
         height: 50px;
         width: 50px;
+        flex-shrink: 0;
         border-radius: 15px;
         display: flex;
         justify-content: center;
@@ -228,7 +240,7 @@ hgroup {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding-right: 150px;
+    width: 82%;
 }
 
 .block>p {
@@ -261,4 +273,15 @@ hgroup {
         border-radius: 10px;
         flex-shrink: 0;
     }
+}
+
+footer {
+    height: 349px;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 140px;
 }
