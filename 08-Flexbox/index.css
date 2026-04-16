@@ -31,6 +31,17 @@ button {
     transition: all .2s ease;
 }
 
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
@@ -48,17 +59,16 @@ body {
     margin: 0 auto;
 }
 
-
 header {
     height: 80px;
     margin-bottom: 90px;
-}
 
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 17px 0;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
 }
 
 .logo img {
@@ -72,6 +82,7 @@ header {
 
 .nav-list {
     display: flex;
+    align-items: center;
     gap: 40px;
 }
 
