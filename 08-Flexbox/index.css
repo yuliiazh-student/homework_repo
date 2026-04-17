@@ -55,11 +55,6 @@ body {
     margin: 0 auto;
 }
 
-.container-2 {
-    width: min(90%, 1200px);
-    margin: 0 auto;
-}
-
 header {
     height: 80px;
     margin-bottom: 90px;
@@ -110,7 +105,7 @@ header {
 
 button {
     display: inline-block;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--orange);
     color: var(--white);
     font-family: Montserrat;
@@ -134,6 +129,7 @@ button {
 
 .buttons button {
     min-width: 110px;
+    padding: 11px 0;
 }
 
 .s-in-btn {
@@ -185,7 +181,7 @@ section {
         line-height: 1.75rem;
         font-weight: 400;
         padding-right: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 39px;
     }
 }
 
@@ -196,12 +192,10 @@ h2 {
 }
 
 #second {
-    background-image: url('./images/background.webp');
+    background-image: url('./images/bg.svg');
     background-size: 100% auto;
-    background-position: center top;
+    background-position: left 50% bottom 7px;
     background-repeat: no-repeat;
-    padding-bottom: 120px;
-
 }
 
 .second-sec {
@@ -218,6 +212,7 @@ h2 {
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
+    padding: 0 15px;
     margin-bottom: 60px;
 
     li {
@@ -243,9 +238,8 @@ h2 {
     }
 }
 
-.second-sec-btn button {
-    display: block;
-    margin: 0 auto;
+.second-sec-btn {
+    text-align: center;
 }
 
 #click {
