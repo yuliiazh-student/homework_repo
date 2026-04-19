@@ -63,13 +63,13 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-}
 
-.header-wrap {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .container {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .nav-list {
