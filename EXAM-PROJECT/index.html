@@ -12,19 +12,27 @@
 
 <body>
     <section class="hero-section">
-        <div class="container">
+        <div class="container hero">
             <hgroup>
                 <h1>Bhromaon</h1>
                 <p>Safe Travel Anywhere</p>
             </hgroup>
-            <form action="#" method="get" id="form">
-                <input type="text" name="search" id="search" placeholder="Search Your Travel Destination"
-                    aria-label="Search destination" required>
-                <button type="submit">
-                    <i class="fa fa-search"></i> SEARCH
-                </button>
-            </form>
+            <div class="form-wrapper">
+                <form action="#" method="get" id="form">
+                    <input type="text" name="search" id="search" placeholder="Search Your Travel Destination"
+                        aria-label="Search destination" autocomplete="off" required>
+                    <div class="btn">
+                        <button type="submit">
+                            <i class="icon-search"></i>SEARCH
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
+        <a href="#w-c-u" class="scroll-down">
+            <span>Scroll Down</span>
+            <i class="icon-chevron-down"></i>
+        </a>
     </section>
     <header>
         <div class="container">
@@ -40,7 +48,7 @@
         </div>
     </header>
     <main>
-        <section class="why-choose-us">
+        <section class="why-choose-us" id="w-c-u">
             <div class="container">
                 <h2>Why Choose Us</h2>
                 <p>Tion and dislike men who are so beguiled and demoralized by desire by the charms of pleasure of the

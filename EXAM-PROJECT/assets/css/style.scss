@@ -1,6 +1,6 @@
 $header-color:#5373FD;
 $text:#FFF;
-
+$search:#999999;
 
 @mixin fz($px) {
     font-size: ($px/16)*1rem;
@@ -43,11 +43,16 @@ body {
 }
 
 .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: "Josefin Sans", sans-serif;
     text-align: center;
     background-image: url('../images/hero-mountain-bg.webp');
-    min-height: 100vh;
-    background-size: cover;
+    min-height: calc(100dvh - 84px);
+    max-height: 1905px;
+    background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -56,6 +61,7 @@ body {
         font-weight: 700;
         @include fz(48);
         @include lh(52);
+        margin-bottom: 8px;
     }
 
     p {
@@ -64,6 +70,59 @@ body {
         @include lh(28);
         @include ls(31);
     }
+
+    hgroup {
+        margin-bottom: 48px;
+    }
+}
+
+.form-wrapper {
+    min-width: 647px;
+    min-height: 52px;
+    background-color: $text;
+    position: relative;
+    border: 4px solid $text;
+}
+
+input[type=text] {
+    width: 100%;
+    height: 52px;
+    border: none;
+    padding: 20px 190px 20px 32px;
+    font-family: inherit;
+    color: $search;
+    font-weight: 400;
+    @include fz(14);
+    @include lh(20);
+    @include ls(20);
+
+    &:focus {
+        border: 1px solid $header-color;
+        outline: none;
+    }
+}
+
+form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: none;
+    background-color: $header-color;
+    min-width: 139px;
+    border-right: 1px solid $text;
+    font-family: "Aleo", serif;
+    color: inherit;
+    @include fz(14);
+    @include lh(20);
+    @include ls(10);
+    cursor: pointer;
+}
+
+form button i {
+    @include fz(16);
+    vertical-align: middle;
+    margin-right: 12px;
 }
 
 header {
