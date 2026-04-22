@@ -2,7 +2,7 @@ $header-color:#5373FD;
 $text:#FFF;
 $search:#999999;
 $btn-hover:#486BFE;
-$ul-bg:#333333;
+$fill-bg:#333333;
 
 $font-main:"Aleo",
 serif;
@@ -312,10 +312,30 @@ h3 {
         padding-top: 120px;
         text-align: center;
         margin-bottom: 60px;
+        letter-spacing: 0;
     }
 }
 
 .flex-tourists {
     display: flex;
     align-items: center;
+    background-color: $fill-bg;
+}
+
+.text-tourists {
+    padding: 48px 60px;
+
+    i {
+        color: $header-color;
+        @include fz(20);
+        position: relative;
+        top: -3px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+}
+
+.tourist-img img {
+    height: 100%;
+    display: block;
 }
