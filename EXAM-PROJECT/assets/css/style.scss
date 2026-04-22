@@ -1,6 +1,13 @@
 $header-color:#5373FD;
 $text:#FFF;
 $search:#999999;
+$btn-hover:#486BFE;
+$ul-bg:#333333;
+
+$font-main:"Aleo",
+serif;
+$font-text:"Josefin Sans",
+sans-serif;
 
 @mixin fz($px) {
     font-size: ($px/16)*1rem;
@@ -38,8 +45,13 @@ button {
 }
 
 body {
-    font-family: "Aleo", serif;
+    font-family: $font-main;
     color: $text;
+}
+
+.container {
+    width: min(90%, 1320px);
+    margin: 0 auto;
 }
 
 .hero-section {
@@ -47,7 +59,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: $font-text;
     text-align: center;
     background-image: url('../images/hero-mountain-bg.webp');
     min-height: calc(100dvh - 84px);
@@ -109,10 +121,11 @@ form button {
     bottom: 0;
     border: none;
     background-color: $header-color;
-    min-width: 139px;
+    padding: 16px 24px;
     border-right: 1px solid $text;
-    font-family: "Aleo", serif;
+    font-family: $font-main;
     color: inherit;
+    text-transform: uppercase;
     @include fz(14);
     @include lh(20);
     @include ls(10);
@@ -128,11 +141,13 @@ form button i {
 header {
     height: 84px;
     background-color: $header-color;
+    position: sticky;
+    top: 0;
 
     .container {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 100%;
     }
 }
@@ -151,10 +166,88 @@ header {
 
 .why-choose-us {
     background-image: url('../images/why-choose-us-bg.webp');
-    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.second-sec {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.21fr 1fr;
+    gap: 136px;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    @include fz(36);
+    @include lh(40);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+p {
+    font-family: $font-text;
+    font-weight: 300;
+    @include fz(16);
+    @include lh(28);
+    @include ls(10);
+}
+
+.main-btn button {
+    border: none;
+    background-color: $header-color;
+    padding: 20px 32px;
+    font-family: $font-main;
+    color: inherit;
+    text-transform: uppercase;
+    @include fz(16);
+    @include lh(20);
+    @include ls(7);
+    cursor: pointer;
+    background: linear-gradient(45deg, $btn-hover 50%, $header-color 50%);
+    background-repeat: no-repeat;
+    background-size: 250% 100%;
+    background-position: 58% 0%;
+    transition: background-position 0.3s ease;
+
+    &:hover {
+        background-position: 0% 0%;
+    }
+}
+
+.text-info {
+
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    p {
+        margin-bottom: 32px;
+    }
+
+    .par {
+        margin-bottom: 29px;
+    }
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 112px;
+
+    img {
+
+        &:first-child {
+            align-self: flex-start;
+        }
+
+        &:last-child {
+            align-self: flex-end;
+        }
+    }
 }
 
 .spain-hotel {
@@ -163,6 +256,41 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    .container {
+        padding-top: 373px;
+    }
+}
+
+.text-overlay {
+    background-color: rgba(35, 35, 35, .9);
+    padding: 44px 32px;
+    max-width: 648px;
+
+    hgroup {
+        p {
+            font-family: $font-text;
+            font-weight: 300;
+            @include fz(20);
+            @include lh(28);
+            @include ls(10);
+            margin-bottom: 16px;
+        }
+    }
+
+    button {
+        padding: 20px 56px;
+        margin-top: 24px;
+    }
+}
+
+h3 {
+    font-family: $font-text;
+    text-transform: uppercase;
+    font-weight: 400;
+    @include fz(20);
+    @include lh(28);
+    margin-bottom: 16px;
 }
 
 .spain-nature {
@@ -179,4 +307,15 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    h2 {
+        padding-top: 120px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+}
+
+.flex-tourists {
+    display: flex;
+    align-items: center;
 }
