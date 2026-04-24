@@ -226,8 +226,9 @@ header {
     bottom: -150px;
     margin-bottom: -50px;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 232px;
 
     li {
         display: flex;
@@ -237,6 +238,7 @@ header {
         gap: 20px;
         @include fz(36);
         @include lh(40);
+        padding-bottom: 60px;
     }
 
     i {
