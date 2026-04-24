@@ -4,6 +4,8 @@ $search:#999999;
 $btn-hover:#486BFE;
 $fill-bg:#333333;
 $footer:#000;
+$red:#FF6363;
+$blue:#00A2FF;
 
 $font-main:"Aleo",
 serif;
@@ -170,6 +172,7 @@ header {
     background-color: $header-color;
     position: sticky;
     top: 0;
+    z-index: 1000;
 
     .container {
         display: flex;
@@ -208,6 +211,49 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.overlap-list {
+    width: 100%;
+    background: $fill-bg;
+    z-index: 10;
+    position: absolute;
+    min-height: 306px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -150px;
+    margin-bottom: -50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        @include fz(36);
+        @include lh(40);
+    }
+
+    i {
+        @include fz(64);
+    }
+}
+
+.icon-search {
+    color: $header-color;
+}
+
+.icon-check-circle {
+    color: $red;
+}
+
+.icon-thumbs-up {
+    color: $blue;
 }
 
 .second-sec {
