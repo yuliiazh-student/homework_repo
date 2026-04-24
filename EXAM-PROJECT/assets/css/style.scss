@@ -3,6 +3,7 @@ $text:#FFF;
 $search:#999999;
 $btn-hover:#486BFE;
 $fill-bg:#333333;
+$footer:#000;
 
 $font-main:"Aleo",
 serif;
@@ -51,6 +52,11 @@ body {
 
 .container {
     width: min(90%, 1320px);
+    margin: 0 auto;
+}
+
+.container-hero {
+    width: min(90%, 647px);
     margin: 0 auto;
 }
 
@@ -130,6 +136,14 @@ form button {
     @include lh(20);
     @include ls(10);
     cursor: pointer;
+
+    &:hover {
+        background-color: $btn-hover;
+    }
+
+    &:active {
+        color: $footer;
+    }
 }
 
 form button i {
@@ -161,6 +175,18 @@ header {
         @include fz(14);
         @include lh(20);
         @include ls(10);
+        padding-bottom: 3px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+
+        &:hover {
+            border-bottom: 2px solid $text;
+        }
+
+        &:active {
+            color: $footer;
+            border-bottom: 2px solid $footer;
+        }
     }
 }
 
@@ -214,6 +240,10 @@ p {
 
     &:hover {
         background-position: 0% 0%;
+    }
+
+    &:active {
+        color: $footer;
     }
 }
 
@@ -303,7 +333,7 @@ h3 {
 
 .our-tourists {
     background-image: url('../images/our-tourists-bg.webp');
-    min-height: 100vh;
+    min-height: calc(100dvh - 268px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -338,4 +368,43 @@ h3 {
 .tourist-img img {
     height: 100%;
     display: block;
+}
+
+footer {
+    height: 268px;
+    background-color: $footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .footer-logo {
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-family: $font-text;
+        font-weight: 400;
+        @include fz(14);
+        @include lh(20);
+        @include ls(20);
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        @include fz(32);
+        display: flex;
+        gap: 32px;
+    }
+
+
+    .social-icons i {
+        &:hover {
+            color: $header-color;
+        }
+
+        &:active {
+            color: $btn-hover;
+        }
+    }
 }
