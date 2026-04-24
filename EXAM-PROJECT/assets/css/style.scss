@@ -61,10 +61,6 @@ body {
 }
 
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: $font-text;
     text-align: center;
     background-image: url('../images/hero-mountain-bg.webp');
@@ -79,6 +75,7 @@ body {
         font-weight: 700;
         @include fz(48);
         @include lh(52);
+        padding-top: 295px;
         margin-bottom: 8px;
     }
 
@@ -92,6 +89,20 @@ body {
     hgroup {
         margin-bottom: 48px;
     }
+
+    span {
+        font-family: $font-text;
+        font-weight: 400;
+        @include fz(14);
+        @include lh(20);
+        @include ls(20);
+    }
+}
+
+.scroll-down i {
+    @include fz(16);
+    display: block;
+    margin-top: 4px;
 }
 
 .form-wrapper {
@@ -100,6 +111,7 @@ body {
     background-color: $text;
     position: relative;
     border: 4px solid $text;
+    margin-bottom: 211px;
 }
 
 input[type=text] {
@@ -130,6 +142,7 @@ form button {
     padding: 16px 24px;
     border-right: 1px solid $text;
     font-family: $font-main;
+    font-weight: 400;
     color: inherit;
     text-transform: uppercase;
     @include fz(14);
@@ -149,7 +162,7 @@ form button {
 form button i {
     @include fz(16);
     vertical-align: middle;
-    margin-right: 12px;
+    margin-right: 10px;
 }
 
 header {
