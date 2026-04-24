@@ -245,6 +245,18 @@ header {
     i {
         @include fz(64);
     }
+
+    .icon-search {
+        color: $header-color;
+    }
+
+    .icon-check-circle {
+        color: $red;
+    }
+
+    .icon-thumbs-up {
+        color: $blue;
+    }
 }
 
 .overlap-list li+li::before {
@@ -257,18 +269,6 @@ header {
     border-top: 1.5px dashed $text;
     border-radius: 85% / 100% 100% 0 0;
     clip-path: inset(0 10% 0 10%);
-}
-
-.icon-search {
-    color: $header-color;
-}
-
-.icon-check-circle {
-    color: $red;
-}
-
-.icon-thumbs-up {
-    color: $blue;
 }
 
 .second-sec {
@@ -362,7 +362,7 @@ p {
     background-repeat: no-repeat;
 
     .container {
-        padding-top: 373px;
+        padding-top: 335px;
     }
 }
 
@@ -403,6 +403,16 @@ h3 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    .text-overlay {
+        margin-left: auto;
+        left: auto;
+        right: 0;
+    }
+
+    .container {
+        padding-top: 335px;
+    }
 }
 
 .our-tourists {
@@ -422,7 +432,7 @@ h3 {
 
 .flex-tourists {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     background-color: $fill-bg;
 }
 
@@ -440,7 +450,6 @@ h3 {
 }
 
 .tourist-img img {
-    height: 100%;
     display: block;
 }
 
