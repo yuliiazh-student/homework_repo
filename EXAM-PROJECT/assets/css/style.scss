@@ -239,11 +239,24 @@ header {
         @include fz(36);
         @include lh(40);
         padding-bottom: 60px;
+        position: relative;
     }
 
     i {
         @include fz(64);
     }
+}
+
+.overlap-list li+li::before {
+    content: '';
+    position: absolute;
+    left: -340px;
+    right: 45%;
+    height: 250px;
+    top: -60px;
+    border-top: 1.5px dashed $text;
+    border-radius: 85% / 100% 100% 0 0;
+    clip-path: inset(0 10% 0 10%);
 }
 
 .icon-search {
