@@ -65,11 +65,11 @@ body {
 .hero-section {
     font-family: $font-text;
     text-align: center;
-    background-image: url('../images/hero-mountain-bg.webp');
+    /*background-image: url('../images/hero-mountain-bg.webp');*/
     min-height: calc(100dvh - 84px);
     max-height: 1905px;
     background-size: 100% auto;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
 
     h1 {
@@ -209,7 +209,7 @@ header {
 }
 
 .why-choose-us {
-    background-image: url('../images/why-choose-us-bg.webp');
+    /* background-image: url('../images/why-choose-us-bg.webp');*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -226,7 +226,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     bottom: -150px;
-    margin-bottom: -50px;
+    margin-bottom: -35px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -357,7 +357,7 @@ p {
 }
 
 .spain-hotel {
-    background-image: url('../images/spain-hotel-bg.webp');
+    /*background-image: url('../images/spain-hotel-bg.webp');*/
     min-height: 100vh;
     background-size: cover;
     background-position: center;
@@ -400,7 +400,7 @@ h3 {
 }
 
 .spain-nature {
-    background-image: url('../images/spain-nature.-bg.webp');
+    /*background-image: url('../images/spain-nature.-bg.webp');*/
     min-height: 100vh;
     background-size: cover;
     background-position: center;
@@ -418,7 +418,7 @@ h3 {
 }
 
 .our-tourists {
-    background-image: url('../images/our-tourists-bg.webp');
+    /*background-image: url('../images/our-tourists-bg.webp');*/
     min-height: calc(100dvh - 268px);
     background-size: cover;
     background-position: center;
