@@ -69,8 +69,12 @@
                     <div class="main-btn"><button type="submit">Explore Places</button></div>
                 </div>
                 <div class="images">
-                    <img src="./assets/images/why-choose-us-sea.webp" alt="Sea">
-                    <img src="./assets/images/why-choose-us-mountain.webp" alt="Mountain">
+                    <img class="lazy" data-src="./assets/images/why-choose-us-sea.webp"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        alt="Sea">
+                    <img class="lazy" data-src="./assets/images/why-choose-us-mountain.webp"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                        alt="Mountain">
                 </div>
             </div>
             <ul class="overlap-list">
@@ -114,7 +118,9 @@
                 <h2>What Our Tourists Say</h2>
                 <div class="flex-tourists">
                     <div class="tourist-img">
-                        <img src="./assets/images/tourist440x280.webp" alt="Tourist">
+                        <img class="lazy" data-src="./assets/images/tourist440x280.webp"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                            alt="Tourist">
                     </div>
                     <div class="text-tourists">
                         <h3>Sam Sumon</h3>
@@ -150,6 +156,10 @@
             <a href="https://www.pinterest.com/" target="_blank"><i class="icon-pinterest"></i></a>
         </div>
     </footer>
+    <script src="assets/js/lazyload.min.js"></script>
+    <script>
+        const lazyLoadInstance = new LazyLoad();
+    </script>
 </body>
 
 </html>
