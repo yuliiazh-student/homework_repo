@@ -213,20 +213,12 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    position: relative;
-    margin-bottom: 80px;
 }
 
 .overlap-list {
     width: 100%;
     background: $fill-bg;
-    z-index: 10;
-    position: absolute;
     min-height: 306px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -150px;
-    margin-bottom: -35px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -241,7 +233,6 @@ header {
         @include fz(36);
         @include lh(40);
         padding-bottom: 60px;
-        position: relative;
     }
 
     i {
@@ -259,18 +250,6 @@ header {
     .icon-thumbs-up {
         color: $blue;
     }
-}
-
-.overlap-list li+li::before {
-    content: '';
-    position: absolute;
-    left: -340px;
-    right: 45%;
-    height: 250px;
-    top: -60px;
-    border-top: 1.5px dashed $text;
-    border-radius: 85% / 100% 100% 0 0;
-    clip-path: inset(0 10% 0 10%);
 }
 
 .second-sec {
