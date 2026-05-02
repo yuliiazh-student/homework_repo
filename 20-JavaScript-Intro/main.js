@@ -1,3 +1,5 @@
+import { SOCIAL_URL } from './extra.js';
+console.log(SOCIAL_URL);
 console.log("Hello World!");
 
 /*Naming conventions:*/
@@ -29,10 +31,29 @@ let USERNAME = "Yuliia";*/
 const user_name = prompt("Як тебе звати?");
 alert(`Привіт, ${user_name}`);
 
-const CURRENT_YEAR = 2026;
-const birthYear = prompt("Введи рік свого народження:");
-const age = CURRENT_YEAR - birthYear;
+function calcAge() {
+    const CURRENT_YEAR = new Date().getFullYear();
+    const birthYear = prompt("Введи рік свого народження:");
+    if (birthYear === null) {
+        alert('Введіть свій правильний вік');
+        calcAge();
+        return;
+    }
+ if (birthYear === '') {
+        alert('Введіть свій вік');
+        calcAge();
+        return;
+    }
+if (isNaN(parseInt(birthYear))) {
+        alert('Введіть свій правильний вік');
+        calcAge();
+        return;
+    }
+    const age = CURRENT_YEAR - birthYear;
 alert(`Твій вік: ${age}`);
+}
+
+calcAge();
 
 const sideLength = prompt("Введи довжину сторони квадрата:");
 const perimeter = sideLength * 4;
