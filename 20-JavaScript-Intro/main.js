@@ -50,7 +50,7 @@ if (isNaN(parseInt(birthYear))) {
         return;
     }
     const age = CURRENT_YEAR - birthYear;
-alert(`Твій вік: ${age}`);
+    alert(`Твій вік: ${age}`);
 }
 
 calcAge();
