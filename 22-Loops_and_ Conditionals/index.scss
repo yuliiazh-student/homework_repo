@@ -1,0 +1,51 @@
+@use 'sass:list';
+$list-index: 1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10;
+$list-colors:orange,
+#FFB300,
+yellow,
+#32CD32,
+green,
+teal,
+blue,
+navy,
+purple,
+magenta;
+
+#wrapper {
+    display: inline-grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 2px;
+
+    div {
+        $size: 60px;
+        font-size: 2rem;
+        width: $size;
+        aspect-ratio: 1;
+        background-color: lightcoral;
+        color: #FFF;
+        font-weight: bold;
+        text-align: center;
+        line-height: $size;
+
+        @each $index in $list-index {
+
+            &[data-index="0_#{$index}"],
+            &[data-index="#{$index}_0"] {
+                background-color: list.nth($list-colors, $index);
+            }
+        }
+    }
+
+    .accent {
+        background-color: red;
+    }
+}
