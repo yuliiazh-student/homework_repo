@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        dl {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 10px;
+
+            dt {
+                font-weight: bold;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Car info</h1>
+    <div id="info-list"></div>
+
+    <button onclick="car.showInfo('info-list')">Car info</button>
+    <br>
+    <br>
+    <input type="text" id="driverName">
+    <button onclick="addDriverHandler()">Add driver</button>
+    <button onclick="checkDriverHandler()">Check driver</button>
+    <br>
+    <br>
+    <input type="number" id="tripDistance" placeholder="Enter distance (km)">
+    <button onclick="calculateTripHandler()">Calculate trip</button>
+
+    <hr>
+    <h2>Час</h2>
+    <button onclick="showTimeHandler()">Показати час</button>
+    <br>
+    <br>
+    <input type="number" id="inputSeconds" placeholder="Додати секунд">
+    <button onclick="changeTimeHandler('seconds')">Змінити секунди</button>
+    <br>
+    <br>
+    <input type="number" id="inputMinutes" placeholder="Додати хвилин">
+    <button onclick="changeTimeHandler('minutes')">Змінити хвилини</button>
+    <br>
+    <br>
+    <input type="number" id="inputHours" placeholder="Додати годин">
+    <button onclick="changeTimeHandler('hours')">Змінити години</button>
+    <hr>
+    <h3>Калькулятор дробів</h3>
+    <input type="number" id="c1" placeholder="ch1" style="width: 50px;"> /
+    <input type="number" id="z1" placeholder="zn1" style="width: 50px;">
+
+    <input type="number" id="c2" placeholder="ch2" style="width: 50px;"> /
+    <input type="number" id="z2" placeholder="zn2" style="width: 50px;">
+    <br><br>
+    <button onclick="actionFrac('add')">+</button>
+    <button onclick="actionFrac('sub')">-</button>
+    <button onclick="actionFrac('mul')">*</button>
+    <button onclick="actionFrac('div')">/</button>
+
+
+    <script src="./myToast.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
