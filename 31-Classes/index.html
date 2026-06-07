@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Class Circle</h1>
+        <div class="input-group">
+            <label for="radiusInput">Введіть радіус кола:</label>
+            <input type="number" id="radiusInput" step="any" placeholder="Наприклад: 5">
+        </div>
+
+        <button id="calcBtn">Обчислити</button>
+
+        <div id="errorBlock" class="error"></div>
+
+        <div class="results" id="resultsBlock" style="display: none;">
+            <p><strong>Радіус (get):</strong> <span id="resRadius"></span></p>
+            <p><strong>Діаметр (get):</strong> <span id="resDiameter"></span></p>
+            <p><strong>Площа (метод):</strong> <span id="resArea"></span></p>
+            <p><strong>Довжина (метод):</strong> <span id="resLength"></span></p>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
