@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHOP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        .input.qty-input {
+            width: 70px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="box mt-6">
-            <form onsubmit="return submitHandler()" novalidate>
+            <form id="add_item_form" novalidate>
                 <div class="columns">
                     <div class="column is-8">
                         <div class="field">
@@ -69,6 +74,7 @@
         </div>
     </div>
 
+    <script src="./helpers.js"></script>
     <script src="./myToast.js"></script>
     <script src="./main.js"></script>
 </body>
