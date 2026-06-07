@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        .input.qty-input {
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box mt-6">
+            <form id="add_item_form" novalidate>
+                <div class="columns">
+                    <div class="column is-8">
+                        <div class="field">
+                            <label class="label" for="product_title">Product title</label>
+                            <div class="control">
+                                <input class="input" id="product_title" type="text" placeholder="Enter product title">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-2">
+                        <div class="field">
+                            <label class="label" for="product_price">Price</label>
+                            <div class="control">
+                                <input class="input" id="product_price" type="number" placeholder="0.00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-1">
+                        <div class="field">
+                            <label class="label" for="product_qty">Quantity</label>
+                            <div class="control">
+                                <input class="input" id="product_qty" type="number" min="1" max="100" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-1 is-align-self-flex-end">
+                        <button type="submit" class="button is-primary">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="box mt-4">
+            <h2 class="is-size-4">Products in cart</h2>
+            <table class="table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Is buy</th>
+                        <th>Price</th>
+                        <th>Qty.</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th colspan="5"></th>
+                        <th id="cart_total">0.00</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+                <tbody id="products_list"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./helpers.js"></script>
+    <script src="./myToast.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
