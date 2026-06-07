@@ -1,4 +1,5 @@
 function shopCartWrapper() {
+  let PRODUCTS_LIST = []
   const CART = [
   {
     title: 'Хліб тостовий',
@@ -30,6 +31,7 @@ function shopCartWrapper() {
     CART.push({
       title,
       price,
+      isBuy: false,
       qty
     })
     return 'add'
@@ -111,17 +113,41 @@ function shopCartWrapper() {
   const total = CART.reduce((acc, item) => acc + item.price * item.qty, 0)
   getEl('cart_total').innerText = total.toFixed(2)
   }
+
+async function getProductsList(){
+    const response = await fetch('products.json')
+    const data = await response.json()
+    PRODUCTS_LIST = data
+}
+
+async function init(dd_id){
+    await getProductsList()
+    let options = '<option value="">-=Select product=-</option>'
+    PRODUCTS_LIST.forEach(product => {
+        options += `<option value="${product.id}">${product.title}</option>`
+    })
+  getEl(dd_id).innerHTML = options
+  // $(`#${dd_id}`).select2()
+  showProductList()
+}
+
   
-  return {
+const getProductData = id => PRODUCTS_LIST.find(el => el.id == id)
+
+  
+return {
     addToCart,
     showProductList,
     actionProduct,
-    calcCartTotal
+    calcCartTotal,
+    init,
+    getProductData
 }
 
 }
 
 const shopCart = shopCartWrapper()
+shopCart.init('products_select')
 
 
 function submitHandler(){
@@ -153,7 +179,10 @@ function submitHandler(){
   : 'Product\'s quantity successfully changed'
   
   toast.success(message)
-
+  getEl('product_title').value = ''
+  getEl('product_price').value = ''
+  getEl('product_qty').valueAsNumber = 1
+  getEl('products_select').value = ''
   return false
 }
 
@@ -173,12 +202,19 @@ function actionProductHandler(title, action) {
   shopCart.actionProduct(title, action)
 }
 
-shopCart.showProductList()
-
 getEl('add_item_form').onsubmit = (e) => {
   e.preventDefault()
   submitHandler()
 }
+
+
+function changeHandler(select) {
+  const product = shopCart.getProductData(select.value)
+  getEl('product_price').value = product.price.toFixed(2)
+  getEl('product_title').value = product.title
+}
+
+
 
 
 

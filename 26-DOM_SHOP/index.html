@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHOP</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet"> -->
     <style>
         .input.qty-input {
             width: 70px;
@@ -21,8 +22,9 @@
                     <div class="column is-8">
                         <div class="field">
                             <label class="label" for="product_title">Product title</label>
-                            <div class="control">
-                                <input class="input" id="product_title" type="text" placeholder="Enter product title">
+                            <div class="select is-fullwidth">
+                                <input id="product_title" type="hidden">
+                                <select id="products_select" onchange="changeHandler(this)"></select>
                             </div>
                         </div>
                     </div>
@@ -30,7 +32,7 @@
                         <div class="field">
                             <label class="label" for="product_price">Price</label>
                             <div class="control">
-                                <input class="input" id="product_price" type="number" placeholder="0.00">
+                                <input class="input" id="product_price" type="number" placeholder="0.00" disabled>
                             </div>
                         </div>
                     </div>
@@ -74,6 +76,9 @@
         </div>
     </div>
 
+    <!-- <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"
+        integrity="sha256-8DGpv13HIm+5iDNWw1XqxgFB4mj+yOKFNb+tHBZOowc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script> -->
     <script src="./helpers.js"></script>
     <script src="./myToast.js"></script>
     <script src="./main.js"></script>

@@ -30,6 +30,7 @@ function shopCartWrapper() {
     CART.push({
       title,
       price,
+      isBuy: false,
       qty
     })
     return 'add'

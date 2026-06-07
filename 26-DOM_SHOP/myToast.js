@@ -1,13 +1,13 @@
 const toast = {
     style: {
-        position: 'fixed',
-        left: '20px',
-        top: '20px',
-        color: '#fff',
-        'border-radius': '5px',
-        padding: '10px',
-        'max-width': '300px',
-        'z-index': '1000',
+    position: 'fixed',
+    left: '20px',
+    top: '20px',
+    color: '#fff',
+    borderRadius: '5px',
+    padding: '10px',
+    maxWidth: '300px',
+    zIndex: '1000'
     },
     colors: {
     success: 'green',
@@ -16,20 +16,30 @@ const toast = {
     info:'blue'
     },
     show(text, type) {
-        let styles = ''
+        /*let styles = ''
     for(let prop in this.style){
     styles+=`${prop}:${this.style[prop]};`
         }
         styles+=`background-color: ${this.colors[type]};`
         const html = `<div id="my-toast" class="my-toast ${type}" style="${styles}">
             ${text}
-        </div>`
+        </div>`*/
+
+       const div = document.createElement('div')
+       div.id = 'my-toast'
+       div.innerText = text
+       for(let prop in this.style){
+       div.style[prop] = this.style[prop]
+       }
+       div.style.backgroundColor = this.colors[type]
+
         
         if(document.getElementById('my-toast')){
             document.getElementById('my-toast').remove()
         }
         
-        document.body.insertAdjacentHTML('afterbegin', html)
+        //document.body.insertAdjacentHTML('afterbegin', html)
+        document.body.prepend(div)
         setTimeout(() => {
             document.getElementById('my-toast').remove()
         }, 3000)
