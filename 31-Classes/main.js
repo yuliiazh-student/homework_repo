@@ -1,49 +1,30 @@
-class Circle {
-    #radius;
+const fig1 = new Figure(100, 200, 'lightgreen')
+const fig2 = new Figure(300, 300, 'blue')
+fig1.draw()
+fig2.draw()
 
-    constructor(radius = 0) {
-        this.radius = radius;
-    }
+const circle1 = new Circle(50, 'yellow');
+circle1.draw();
 
-    get radius() {
-        return this.#radius;
-    }
 
-    set radius(value) {
-        if (value >= 0) {
-            this.#radius = value;
-        } else {
-            console.log("Помилка: Радіус не може бути від'ємним!");
-        }
-    }
+console.log(fig1);
+console.log(fig2);
 
-    get diameter() {
-        return this.#radius * 2;
-    }
+console.log(circle1);
 
-    getArea() {
-        return Math.PI * Math.pow(this.#radius, 2);
-    }
+console.log("--- ПЕРЕВІРКА КОЛА ---");
+console.log(`Поточний радіус: ${circle1.radius}px`); 
+console.log(`Поточний діаметр: ${circle1.diameter}px`);
+console.log(`Площа кола: ${circle1.getArea().toFixed(2)}px²`); 
+console.log(`Довжина кола: ${circle1.getLength().toFixed(2)}px`);
 
-    getLength() {
-        return 2 * Math.PI * this.#radius;
-    }
-}
+console.log("--- ПЕРЕВІРКА ЗМІНИ РОЗМІРУ ---");
+circle1.radius = 100; 
+console.log(`Новий радіус: ${circle1.radius}px`); 
+console.log(`Новий діаметр: ${circle1.diameter}px`); 
+console.log(`Площа кола: ${circle1.getArea().toFixed(2)}px²`); 
+console.log(`Довжина кола: ${circle1.getLength().toFixed(2)}px`);
 
-const outputDiv = document.getElementById('output');
-    
-    const myCircle = new Circle();
-
-    myCircle.radius = 5.0;
-
-    let htmlContent = `
-        <p><strong>Радіус кола (get):</strong> ${myCircle.radius} см</p>
-        <p><strong>Діаметр кола (get):</strong> ${myCircle.diameter} см</p>
-        <p><strong>Площа кола (метод):</strong> ${myCircle.getArea().toFixed(2)} см²</p>
-        <p><strong>Довжина кола (метод):</strong> ${myCircle.getLength().toFixed(2)} см</p>
-    `;
-    
-    outputDiv.innerHTML = htmlContent;
-
-    console.log("Спроба встановити від'ємний радіус через консоль...");
-    myCircle.radius = -3.5;
+console.log("--- ПЕРЕВІРКА ЗАХИСТУ ВІД ПОМИЛОК ---");
+circle1.radius = -20; 
+console.log(`Радіус після невдалої спроби: ${circle1.radius}px`);
