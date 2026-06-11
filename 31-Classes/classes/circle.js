@@ -1,7 +1,8 @@
 class Circle extends Figure {
-  constructor(radius, color) {
+    constructor(radius, color) {
     super(radius * 2, radius * 2, color);
-      this._radius = radius;
+       this._radius = radius;
+      this.element = null;
     }
     
   get radius() {
@@ -10,12 +11,17 @@ class Circle extends Figure {
 
     set radius(value) {
     if (value <= 0) {
-    console.error("Помилка! Радіус не може бути нульовим або від'ємним!");
+        console.error("Помилка! Радіус не може бути нульовим або від'ємним!");
     return;
   }
     this._radius = value;
     this.width = value * 2;
-    this.height = value * 2;
+        this.height = value * 2;
+        
+    if (this.element) {
+    this.element.style.width = this.width + 'px';
+    this.element.style.height = this.height + 'px';
+  }
   }
 
   get diameter() {
@@ -36,6 +42,7 @@ class Circle extends Figure {
     div.style.height = this.height + 'px';
     div.style.backgroundColor = this.color;
     div.style.borderRadius = '50%';
+    this.element = div; 
     document.body.append(div);
   }
 }
