@@ -28,7 +28,6 @@ function getHtmlEntries(dir, entries = {}) {
 }
 
 export default defineConfig({
-  base: '/homework_repo/32-VITE-Novik/dist/',
   plugins: [
     injectHTML(),
     // Add image auto-conversion and optimization pipeline
