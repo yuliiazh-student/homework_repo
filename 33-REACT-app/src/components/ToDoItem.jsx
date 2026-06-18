@@ -1,9 +1,18 @@
 import { Flex, Button } from "antd"
+import { useEffect } from "react";
 
 export default function ToDoItem(props) {
     const item = props.item
+
+    useEffect(() => {
+        console.log('done changed');
+        return () => {
+            console.log('unmount', item.text);
+        }
+    }, [props.item.isDone])
+
     return (
-        <li key={item.id} data-key={item.id}>
+        <li>
             <div className={`todo-item ${item.isDone ? 'item-done' : ''}`}>
                 <Flex justify='space-between'>
                     <p>{item.text}</p>
