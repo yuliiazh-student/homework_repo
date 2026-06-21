@@ -38,14 +38,15 @@ function shopCartWrapper() {
   }
   }
   
-  function showProductList(){
-  let html = ''
-  let sum = 0
-  if (CART.length) {
-    CART.toSorted((a,b) => a.isBuy - b.isBuy).forEach((item, index) => {
-      const prodTotal = item.price * item.qty
-      const status = `<span class="tag is-${item.isBuy ? 'success' : 'danger'}">${item.isBuy ? 'Yes' : 'No'}</span>`
-      html += `<tr data-title="${item.title}">
+  function showProductList() {
+    let html = ''
+    let htmlPrint = ''
+    let sum = 0
+    if (CART.length) {
+      CART.toSorted((a, b) => a.isBuy - b.isBuy).forEach((item, index) => {
+        const prodTotal = item.price * item.qty
+        const status = `<span class="tag is-${item.isBuy ? 'success' : 'danger'}">${item.isBuy ? 'Yes' : 'No'}</span>`
+        html += `<tr data-title="${item.title}">
         <td>${index + 1}</td>
         <td>${item.title}</td>
         <td>${status}</td>
@@ -61,25 +62,37 @@ function shopCartWrapper() {
         ${!item.isBuy ? `<button class="button is-danger is-small btn-delete">Remove</button>` : ''}
         </td>
       </tr>`
-      sum += prodTotal
-    })
-  } else {
-    html = `<tr>
+        
+        htmlPrint += `<tr data-title="${item.title}">
+        <td>${index + 1}</td>
+        <td>${item.title}</td>
+        <td>${item.price.toFixed(2)}</td>
+        <td>${item.qty}</td>
+        <td>${(prodTotal).toFixed(2)}</td>
+      </tr>`
+        
+        sum += prodTotal
+      })
+    } else {
+      html = `<tr>
       <td colspan="5">No products in cart</td>
     </tr>`
-  }
+    }
 
-  const totalBuy = CART
-    .filter(el => el.isBuy)
-    .reduce((acc, item) => acc + item.price * item.qty, 0)
-  const totalNotBuy = CART
-    .filter(el => !el.isBuy)
-    .reduce((acc, item) => acc + item.price * item.qty, 0)
-  console.log(totalBuy, totalNotBuy);
+    const totalBuy = CART
+      .filter(el => el.isBuy)
+      .reduce((acc, item) => acc + item.price * item.qty, 0)
+    const totalNotBuy = CART
+      .filter(el => !el.isBuy)
+      .reduce((acc, item) => acc + item.price * item.qty, 0)
+    // console.log(totalBuy, totalNotBuy);
 
-  getEl('products_list').innerHTML = html
-  getEl('cart_total').innerText = sum.toFixed(2)
-  addListeners()
+    getEl('products_list').innerHTML = html
+     getEl('products_list_print').innerHTML = htmlPrint
+    // getEl('cart_total').innerText = sum.toFixed(2)
+    document.querySelectorAll('.cart_total').forEach(el => el.innerText = sum.toFixed(2))
+    // addListeners()
+    // calcCartTotal()
   }
   
   function actionProduct(title, action = ''){
@@ -128,7 +141,7 @@ async function init(dd_id){
         options += `<option value="${product.id}">${product.title}</option>`
     })
   getEl(dd_id).innerHTML = options
-  // $(`#${dd_id}`).select2()
+  $(`#${dd_id}`).select2({width: '100%' })
   }
   
 
@@ -166,6 +179,7 @@ const getProductData = id => PRODUCTS_LIST.find(el => el.id == id)
   
 return {
     addToCart,
+    addListeners,
     showProductList,
     actionProduct,
     calcCartTotal,
@@ -176,9 +190,28 @@ return {
 }
 
 const shopCart = shopCartWrapper()
-shopCart.init('products_select')
-shopCart.showProductList()
+// shopCart.init('products_select')
+// shopCart.showProductList()
 
+document.addEventListener('DOMContentLoaded', (e) => {
+  console.log('DOM ready');
+
+  shopCart.init('products_select')
+  shopCart.showProductList()
+   shopCart.addListeners() 
+
+  getEl('add_item_form').onsubmit = (e) => {
+    e.preventDefault()
+    submitHandler()
+  }
+})
+
+window.addEventListener('load', () => {
+  console.log('window loaded');
+  setTimeout(() => {
+    document.getElementById('loader').remove()
+  }, 1000)
+})
 
 function submitHandler(){
   const title = getEl('product_title').value
@@ -212,7 +245,8 @@ function submitHandler(){
   getEl('product_title').value = ''
   getEl('product_price').value = ''
   getEl('product_qty').valueAsNumber = 1
-  getEl('products_select').value = ''
+  // getEl('products_select').value = ''
+  $('#products_select').val('').trigger('change') 
   return false
 }
 
@@ -232,10 +266,10 @@ function actionProductHandler(title, action) {
   shopCart.actionProduct(title, action)
 }
 
-getEl('add_item_form').onsubmit = (e) => {
-  e.preventDefault()
-  submitHandler()
-}
+// getEl('add_item_form').onsubmit = (e) => {
+//   e.preventDefault()
+//   submitHandler()
+// }
 
 
 function changeHandler(select) {
