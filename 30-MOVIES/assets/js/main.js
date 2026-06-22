@@ -60,6 +60,8 @@ async function search() {
   
 }
 
+const posterSRC = (path) => path ? 'https://image.tmdb.org/t/p/w300' + path : './assets/images/nocover.png'
+
 function showResult(data, query){
   const tmpl = document.getElementById('movie_list_item')
   const result = document.getElementById('result-wrap')
@@ -68,7 +70,7 @@ function showResult(data, query){
     const clone = document.importNode(tmpl.content, true)
    
     const img = clone.querySelector('.movie-poster img')
-    img.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + item.poster_path)
+    img.setAttribute('src', posterSRC(item.poster_path))
     img.setAttribute('alt', item.title)
     clone.querySelector('.movie-title').innerText = item.title
     clone.querySelector('.movie-year').innerText = formatDate(item.release_date)
@@ -77,25 +79,38 @@ function showResult(data, query){
 
     result.appendChild(clone)
   })
-  document.getElementById("show-results-text").innerText = `Showing 8 of ${data.total_results} results for "${query}"`
-  buildPagination(data.page, data.total_pages)
-}
+
+      const fromItem = ((data.page - 1) * PER_PAGE) + 1
+      const toItem = data.page * PER_PAGE > data.total_results ? data.total_results : data.page * PER_PAGE
+      document.getElementById("show-results-text").innerText = `Showing ${fromItem} to ${toItem} of ${data.total_results} results for "${query}"`
+      buildPagination(data.page, data.total_pages)
+    }
 
 async function getMovieDetail(id) {
   if (localStorage.getItem('movie_' + id)) {
     return JSON.parse(localStorage.getItem('movie_' + id))
   }
+
   const url = DEV_MODE
     ? 'mocks/detail.json'
-    : 'https://api.themoviedb.org/3/movie/' + id
-  const response = await authFetch(url)
-  if (!response.isOK) {
-    //TODO: replace with error toast
-    alert("Some error occured. Try again, please")
-    return null
-  }
-  localStorage.setItem('movie_' + id, JSON.stringify(response.data))
-  return response.data
+    : BASE_URL + 'movie/' + id
+  // const response = await authFetch(url)
+  // if (!response.isOK) {
+  //   //TODO: replace with error toast
+  //   alert("Some error occured. Try again, please")
+  //   return null
+  // }
+const urlCredits = DEV_MODE
+  ? 'mocks/credits.json'
+  : BASE_URL + 'movie/' + id + '/credits'
+
+  // const responseC = await authFetch(urlCredits)
+
+  const [detail, credits] = await Promise.all([authFetch(url), authFetch(urlCredits)])
+  detail.data.cast = credits.data.cast.slice(0, 10)
+  
+  localStorage.setItem('movie_' + id, JSON.stringify(detail.data))
+  return detail.data
 }
 
 
@@ -106,14 +121,25 @@ async function showDetail(id) {
 
   detail.querySelector('.hero-bg').style.backgroundImage = `url('https://image.tmdb.org/t/p/w1280${item.backdrop_path}')`
   const img = detail.querySelector('.detail-poster-img')
-  img.setAttribute('src', 'https://image.tmdb.org/t/p/w500' + item.poster_path)
+  img.setAttribute('src', posterSRC(item.poster_path))
   img.setAttribute('alt', item.title)
   detail.querySelector('.detail-title').innerText = item.title
   detail.querySelector('.rating-score').innerText = item.vote_average.toFixed(1)
   detail.querySelector('.rating-count').innerText = item.vote_count
   detail.querySelector('.detail-overview').innerText = item.overview
 
-  
+  console.log(item);
+let castHTML = ''
+item.cast.forEach((person) => {
+    castHTML += `<div class="cast-card">
+        <div class="cast-avatar">
+            <img src="https://image.tmdb.org/t/p/w200${person.profile_path}" alt="${person.name}">
+        </div>
+        <div class="cast-name">${person.name}</div>
+        <div class="cast-role">${person.character}</div>
+    </div>`
+})
+  detail.querySelector('.cast-grid').innerHTML = castHTML
 
   showPage('detail')
 }
